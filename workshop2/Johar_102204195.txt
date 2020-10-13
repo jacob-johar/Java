@@ -1,0 +1,16 @@
+
+
+Name : Jacob Nedumattathil Johar
+ID: 102204195
+Workshop 2
+Date: 03 October 2020
+
+
+By doing the workshop, I was able to use two classes and learn how to create the reference of one class in another and invoke it. Here we make use of getter and setter methods for each data members.We also make use of access specifiers to limit the decimal places in the  output.Also make use of iterative and conditional constructs for handling the requirements specified.Also make use of this operator to assign values to the data members.
+
+Program Structure
+
+
+Run the incomeTax.java file(task1->src->workshop2->incomeTax.java)
+
+ Tax.java file 

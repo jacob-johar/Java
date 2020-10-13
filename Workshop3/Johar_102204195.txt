@@ -1,0 +1,9 @@
+
+
+Name : Jacob Nedumattathil Johar
+ID: 102204195
+Workshop 3
+Date: 10 October 2020
+
+
+By doing the workshop, I was able to use 7 classes and an additional test class to create objects. Through this, I was able to learn about the important concepts such as interface, inheritance and abstract class. I was able to implement inheritance with the help of extends keyword. Also we create a main interface class called Payable.Also learned about exception handling in java with the help of throw keyword. Also learned about the use of implements keyword in Java. This workshop was really a useful one to learn  all the core concepts in Java.

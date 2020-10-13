@@ -1,0 +1,21 @@
+
+
+Name : Jacob Nedumattathil Johar
+ID: 102204195
+Workshop 1
+Date: 26 September 2020
+
+
+By doing the workshop which includes two tasks, I was able to learn the fundamental concepts in Java such as classes, arrays( both 1D and 2D), getting input from user with help of scanner library, generate random functions using Math.Random() library. I was also able to learn about the looping constructs such as for, while and do while. Also about the if , else and else if conditional constructs. Apart from these I was able learn about the Eclipse IDE and how it can be used for Java development.
+
+
+Program Structure
+
+
+Task 1
+
+Run the MaxLocation.java file(task1->src->task1->MaxLocation.java)
+
+Task 2 
+
+Run the Craps.java file(task2->src->task2->Craps.java)
