@@ -1,0 +1,9 @@
+
+
+Name : Jacob Nedumattathil Johar
+ID: 102204195
+Workshop 5
+Date: 31 October 2020
+
+
+By doing this workshop I learned about reading/ writing the data to a random access file. Also it helped me to learn to build a a Java GUI application by dealing with the addition of many field such as buttons, textfield.
