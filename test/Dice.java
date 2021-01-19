@@ -8,7 +8,6 @@ public class Dice
     // function for rolling the specified number of dice
 	public static int[]  rolling(int n){
 	  int[] myNum = new int[50];
-	 
 	  for(int i = 0; i< n; i++) {
 		  myNum[i] = (int) ((Math.random() * 6) + 1);
 	  }
@@ -17,12 +16,11 @@ public class Dice
 	}
 
 	//function to check if number 3 is present or not
-	public static boolean contains(final int[] array, final int v) {
+	public static boolean containsValue(final int[] array, final int value) {
 
         boolean result = false;
-
         for(int i : array){
-            if(i == v){
+            if(i == value){
                 result = true;
                 break;
             }
@@ -32,7 +30,7 @@ public class Dice
     }
 	
 	// function which returns the index values that don't have the value 3
-	public static int[] find(int[] array, int value) {
+	public static int[] findIndex(int[] array, int value) {
 		int[] indexes = new int[50];
 		int j = 0;
 	    for(int i=0; i<array.length; i++) 
@@ -44,21 +42,21 @@ public class Dice
 	}
 	
 	// function to compute the smallest value
-	public static int getSmallest(int[] a, int total){  
+	public static int getSmallest(int[] array, int small){  
 		int temp;  
-		for (int i = 0; i < total; i++)   
+		for (int i = 0; i < small; i++)   
 		        {  
-		            for (int j = i + 1; j < total; j++)   
+		            for (int j = i + 1; j < small; j++)   
 		            {  
-		                if (a[i] > a[j])   
+		                if (array[i] > array[j])   
 		                {  
-		                    temp = a[i];  
-		                    a[i] = a[j];  
-		                    a[j] = temp;  
+		                    temp = array[i];  
+		                    array[i] = array[j];  
+		                    array[j] = temp;  
 		                }  
 		            }  
 		        }  
-		       return a[0];  
+		       return array[0];  
 		}  
 	
 
@@ -77,17 +75,17 @@ public class Dice
 		iteration = input.nextInt();
 		
 		int[] dice = rolling(count);
-	    flag = contains(dice,3);
+	    flag = containsValue(dice,3);
 		do {
 		
 		  if(flag) {
 			total = 0;
-		    dice = find(dice,3);	
+		    dice = findIndex(dice,3);	
 		    flag = false;
 		}
 		dice = rolling(dice.length);
 		int smallest = getSmallest(dice,dice.length);
-		dice = find(dice,smallest);	
+		dice = findIndex(dice,smallest);	
 		total += smallest ;
 		j++;
 		}while(j < iteration);
