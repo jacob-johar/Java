@@ -1,149 +1,101 @@
-import java.util.Random;  
+package test;
+
+import java.util.Random;
+import java.util.Scanner;  
 
 public class Dice
 {
+    // function for rolling the specified number of dice
+	public static int[]  rolling(int n){
+	  int[] myNum = new int[50];
+	 
+	  for(int i = 0; i< n; i++) {
+		  myNum[i] = (int) ((Math.random() * 6) + 1);
+	  }
+		
+	  return myNum;
+	}
 
-    static int dice1,dice2,dice3,dice4,dice5, total,sum;
-    
-   
-	public static void  rolling()
-	{
-	
-	
-	  dice1 = (int) ((Math.random() * 6) + 1);
-	  
+	//function to check if number 3 is present or not
+	public static boolean contains(final int[] array, final int v) {
 
-	  dice2 = (int) ((Math.random() * 6) + 1);
-	  
-	  dice3 = (int) ((Math.random() * 6) + 1);
-	  dice4 = (int) ((Math.random() * 6) + 1);
-	  dice5 = (int) ((Math.random() * 6) + 1);
-	  
+        boolean result = false;
+
+        for(int i : array){
+            if(i == v){
+                result = true;
+                break;
+            }
+        }
+
+        return result;
+    }
+	
+	// function which returns the index values that don't have the value 3
+	public static int[] find(int[] array, int value) {
+		int[] indexes = new int[50];
+		int j = 0;
+	    for(int i=0; i<array.length; i++) 
+	         if(array[i] != value) {
+	        	 indexes[j] = i;
+	        	 j++;
+	         }
+	             return indexes;
 	}
 	
+	// function to compute the smallest value
+	public static int getSmallest(int[] a, int total){  
+		int temp;  
+		for (int i = 0; i < total; i++)   
+		        {  
+		            for (int j = i + 1; j < total; j++)   
+		            {  
+		                if (a[i] > a[j])   
+		                {  
+		                    temp = a[i];  
+		                    a[i] = a[j];  
+		                    a[j] = temp;  
+		                }  
+		            }  
+		        }  
+		       return a[0];  
+		}  
 	
 
 	// main function
 	public static void main(String[] args) 
 	{
 		Random rand = new Random(System.currentTimeMillis());
+		int count,total = 0,iteration,j = 1;	
+	    boolean flag = false;
+		Scanner input=new Scanner(System.in);
+       
+		System.out.print("Enter the number of dice");
+		count = input.nextInt();
 		
-		do
-		{
-			rolling();
-			
-			
-			
-			if (dice1 == 3 || dice2 == 3 || dice3 == 3 || dice4 == 3|| dice5 == 3 )
-			{
-				total = 0
-						
-			   if(dice1 == 3)
-			   {
-					  dice2 = (int) ((Math.random() * 6) + 1);
-					  dice3 = (int) ((Math.random() * 6) + 1);
-					  dice4 = (int) ((Math.random() * 6) + 1);
-					  dice5 = (int) ((Math.random() * 6) + 1); 
-			   }
-			   
-				if(dice2 == 3)
-				   {
-					      dice1 = (int) ((Math.random() * 6) + 1);
-						  dice3 = (int) ((Math.random() * 6) + 1);
-						  dice4 = (int) ((Math.random() * 6) + 1);
-						
-						  dice5 = (int) ((Math.random() * 6) + 1); 
-				   }
-				if(dice3 == 3)
-				   {
-					    
-					  dice1 = (int) ((Math.random() * 6) + 1);
-					  dice2 = (int) ((Math.random() * 6) + 1);
-					  dice4 = (int) ((Math.random() * 6) + 1);
-					
-					  dice5 = (int) ((Math.random() * 6) + 1); 
-				   }
-				if(dice4 == 3)
-				   {	
-					  dice1 = (int) ((Math.random() * 6) + 1);
-					  dice2 = (int) ((Math.random() * 6) + 1);
-					  dice3 = (int) ((Math.random() * 6) + 1);
-					
-					  dice5 = (int) ((Math.random() * 6) + 1); 
-				   }
-				if(dice5 == 3)
-				   {
-					      dice1 = (int) ((Math.random() * 6) + 1);
-						  dice2 = (int) ((Math.random() * 6) + 1);
-						  dice3 = (int) ((Math.random() * 6) + 1);
-						
-						  dice4 = (int) ((Math.random() * 6) + 1); 
-				   }
-				
-				
-						
-			}
-			else 
-		    {
-				do
-				{
-					int smallest = (dice1 < dice2 && dice3 && dice4 && dice5) ? dice1 : (dice2 < dice1 && dice3 && dice4 && dice5) ? dice2
-							 : (dice3 < dice1 && dice2 && dice4 && dice5) ? dice3 : (dice4 < dice1 && dice2 && dice3 && dice5) ? dice4 :dice5);
-							 total += smallest
-										
-									   if(dice1 == smallest)
-									   {
-											  dice2 = (int) ((Math.random() * 6) + 1);
-											  dice3 = (int) ((Math.random() * 6) + 1);
-											  dice4 = (int) ((Math.random() * 6) + 1);
-											  dice5 = (int) ((Math.random() * 6) + 1); 
-									   }
-									   
-										if(dice2 == smallest)
-										   {
-											      dice1 = (int) ((Math.random() * 6) + 1);
-												  dice3 = (int) ((Math.random() * 6) + 1);
-												  dice4 = (int) ((Math.random() * 6) + 1);
-												
-												  dice5 = (int) ((Math.random() * 6) + 1); 
-										   }
-										if(dice3 == smallest)
-										   {
-											    
-											  dice1 = (int) ((Math.random() * 6) + 1);
-											  dice2 = (int) ((Math.random() * 6) + 1);
-											  dice4 = (int) ((Math.random() * 6) + 1);
-											
-											  dice5 = (int) ((Math.random() * 6) + 1); 
-										   }
-										if(dice4 == smallest)
-										   {	
-											  dice1 = (int) ((Math.random() * 6) + 1);
-											  dice2 = (int) ((Math.random() * 6) + 1);
-											  dice3 = (int) ((Math.random() * 6) + 1);
-											
-											  dice5 = (int) ((Math.random() * 6) + 1); 
-										   }
-										if(dice5 == smallest)
-										   {
-											      dice1 = (int) ((Math.random() * 6) + 1);
-												  dice2 = (int) ((Math.random() * 6) + 1);
-												  dice3 = (int) ((Math.random() * 6) + 1);
-												
-												  dice4 = (int) ((Math.random() * 6) + 1); 
-										   }	
-										
-					
-				}while(true);
-				 
-			
-			     
-		    }
-			
-					
-			
-		}while(true);
-
+		System.out.print("Enter the number of iterations");
+		iteration = input.nextInt();
+		
+		int[] dice = rolling(count);
+	    flag = contains(dice,3);
+		do {
+		
+		  if(flag) {
+			total = 0;
+		    dice = find(dice,3);	
+		    flag = false;
+		}
+		dice = rolling(dice.length);
+		int smallest = getSmallest(dice,dice.length);
+		dice = find(dice,smallest);	
+		total += smallest ;
+		j++;
+		}while(j < iteration);
+		
+		System.out.print("Total Value is "+ total);
+		
 	}
-
 }
+		
+			
+		
